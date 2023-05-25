@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Magasin specalisé dans le jeux video de nouvelle et ancienne generation">
+
+
+    <!--lien police -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap" rel="stylesheet">
+
+
+
+    <!-- lien css-->
+
+    <link type="text/css" rel="stylesheet" href="style.css" />
+
+
+    <title>Panier</title>
+
+
+</head>
+
+<body id="panier">
+
+
+    <header>
+        <nav>
+            <div>
+                <img src="img/izem.gif" type="video/mp4" width="100px" height="100px" alt="logo izem-gaming"
+                    class=" logo" />
+            </div>
+            <ul class="nav-links">
+
+                <li><a href="index.html">accueil</a></li>
+                <li><a href="next.html">next-gen</a></li>
+                <li><a href="retro_gaming.html">Retro-gaming</a></li>
+                <li><a href="panier.html">panier</a></li>
+
+            </ul>
+
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- panier -->
+        <section id="contenaire-panier">
+
+            <div class="panier">
+                <h2 class="panier-title">Votre panier</h2>
+
+                <!-- tableau du panier -->
+                <table>
+                    <tr><!--une ligne de tableau-->
+                        <th>Article</th><!--celulle d'en tete'-->
+                        <th>Prix unitaire</th>
+                        <th colspan="2">Quantité</th>
+                    </tr>
+                    <tr><!--celulle-->
+                        <td>Playstation 5</td><!--celulle de données-->
+                        <td>599 €</td>
+                        <td class="quantité-cell"><input class="quantité" type="text" value="1"></td>
+                        <!--input champ de saisie de type texte avec une valeur de base 1-->
+                        <td class="cancel-cell"><a href="#">
+                                <p class="cancel">supprimer</p><!--pour supprimer des elements-->
+                            </a>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>Xbox Serie X</td>
+                        <td>499 €</td>
+                        <td class="quantité-cell"><input class="quantité" type="text" value="1"></td>
+                        <td class="cancel-cell"><a href="#">
+                                <p class="cancel">supprimer</p>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Megadrive</td>
+                        <td>169 €</td>
+                        <td class="quantité-cell"><input class="quantité" type="text" value="1"></td>
+                        <td class="cancel-cell"><a href="#">
+                                <p class="cancel">supprimer</p>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="total" colspan="2">Total de la commande :</td>
+                        <td class="total-prix" colspan="2">1267 €</td><!--colspan la cellule occupe 2 colonnes-->
+                    </tr>
+
+
+                </table>
+            </div>
+
+            <!-- livraison -->
+
+            <div class="livraison">
+                <h2 class="livraison-title">Préférences de livraison</h2>
+                <div class="adresse-contenaire"><!--div du contenaire parent-->
+
+                    <div class="adresse-option"><!--div du contenaire enfant-->
+                        <p class="lieu">Où souhaitez-vous être livré ?</p>
+
+                        <fieldset><!--permet de grouper des éléments de formulaire (input, label, etc.)-->
+
+                            <div class="option-livraison"><!--div du contenaire enfant-->
+                                <div class="option-livraison-btn">
+                                    <input type="radio" id="adresse1"
+                                        name="option-livraison"><!--input de type radio(boutton de selection)-->
+                                    <p class="option-adresse">Mon adresse courante</p>
+                                </div>
+                                <div class="option-livraison-btn">
+                                    <input type="radio" id="adresse2" name="option-livraison">
+                                    <p class="option-adresse">Autre adresse</p>
+                                </div>
+
+                            </div>
+
+                        </fieldset>
+
+                        <p class="option-contact">Options :</p>
+
+                        <fieldset>
+                            <div class="sms">
+                                <input type="checkbox" value="sms"><!--cree une case a cocher avec une valeur ici sms-->
+                                <p class="sms-txt">Suivi de livraison par sms (inclus)</p>
+                            </div>
+                            <div class="retour">
+                                <input type="checkbox" value="retour">
+                                <p class="retour-txt">Satisfait ou remboursé (+2euros)</p>
+                            </div>
+                            <div class="garantie">
+                                <input type="checkbox" value="garantie">
+                                <p class="garantie-txt">Garantie 2 ans (+10 euros)</p>
+                            </div>
+
+
+                        </fieldset>
+
+
+                    </div>
+
+                    <div class="adresse">
+                        <p class="adresse-title">Adresse :</p>
+
+                        <fieldset class="adresse-info">
+                            <label for="street">Rue</label>
+                            <!--label utilisée pour associer une étiquette à un élément de formulaire spécifique, ici for identifie l'elemnt auquel il est associé -->
+                            <input class="adresse-txt" type="text" required>
+                            <label for="postal-code">Code postal</label>
+                            <input class="adresse-txt" type="text" required>
+                            <label for="country">Ville</label>
+                            <input class="adresse-txt" type="text" required>
+                        </fieldset>
+
+
+                    </div>
+                </div>
+            </div>
+            <!---------------------------------paiement------------------------>
+
+
+            <div class="confirme-paiement">
+
+                <div class="continue-paiement">
+                    <button class="continue"><a href="next.html">Continuer vos achats</a></button>
+                    <button class="paiement">Valider et payer</button>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!--pied de page-->
+
+    <footer class="footer">
+
+
+
+        <ul class="social-icon">
+
+
+            <li class="social-icon__item"><a class="social-icon__link" href="https://fr-fr.facebook.com/">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+            </li>
+            <li class="social-icon__item"><a class="social-icon__link" href="https://twitter.com/?lang=fr">
+                    <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+            </li>
+            <li class="social-icon__item"><a class="social-icon__link" href="https://www.youtube.com/">
+                    <ion-icon name="logo-youtube"></ion-icon>
+                </a>
+            </li>
+            <li class="social-icon__item"><a class="social-icon__link" href="https://www.instagram.com/">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+            </li>
+        </ul>
+        <ul class="menu">
+
+            <li class="menu__item"><a class="menu__link" href="index.html">Accueil</a></li>
+            <li class="menu__item"><a class="menu__link" href="next.html">Next-Gen</a></li>
+            <li class="menu__item"><a class="menu__link" href="retro_gaming.html">Retro-Gaming</a></li>
+
+            <li class="menu__item"><a class="menu__link" href="tel:07-68-97-38-52">Contactez nous</a></li>
+            <li class="menu__item"> <a class="menu__link" href="mailto:ourabah.lou@hotmail.fr">@</a></li>
+
+        </ul>
+        <a href="https://www.facebook.com/izemgaming">
+            <p>&copy;2023 Ourabah Lounnas </p>
+        </a>
+
+
+    </footer>
+
+    <!--script ionicons-->
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>

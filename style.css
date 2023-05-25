@@ -1,0 +1,1025 @@
+:root {
+  --sectionbody: rgb(9, 4, 79);
+  --textColor: #1b2741;
+  --sectionprix: #ee6b2f;
+  --sectionBack: #0a1964;
+  --sectionpanier: lightgray;
+  --sectionproduit: rgb(255, 255, 255);
+
+}/**permet des variables globale***/
+
+* {
+  padding: 0;/*marge interieur*/
+  margin: 0;/*marge exterieur*/
+  box-sizing: border-box;/**/
+  list-style: none;/*sytle de liste aucune*/
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+
+h2 {
+  font-family: 'roboto', serif;/*police d'ecriture*/
+}
+
+h2 {
+  text-transform: uppercase;/*transforme le texte en majuscule*/
+}
+
+@media (max-width:900px) {
+  h2 {
+    font-size: 1em;
+  }
+
+}
+
+h3,
+p,
+a {
+  font-family: 'Poppins', sans-serif;
+}
+
+
+body {
+  background-color: var(--sectionbody);
+  
+
+}
+
+/***************************************************************page d'accueil***********************************************************************/
+
+
+/*************************************************************bar de navigation**********************************************************************/
+
+nav {
+
+  display: flex;/*contenaire flexible*/
+  justify-content: space-between;/*alignement horizontal*/
+  align-items: center;/*aligement vertical*/
+  background: linear-gradient(90deg, #850c49 0%, rgba(91, 0, 63, 1) 34%, rgba(80, 0, 99, 1) 54%, rgba(52, 0, 124, 1) 65%, rgba(11, 0, 173, 1) 99%);
+  font-family: 'Poppins', sans-serif;
+  padding: 25px;
+
+}
+
+nav .logo {
+  cursor: pointer;
+  margin-left: 41px;
+  border-radius: 5px;/*rayon de bordure*/
+}
+
+
+
+
+
+
+
+/*******************************************************************lien nav bar***********************************************************************/
+
+.nav-links {
+  
+  display: flex;
+  justify-content: space-around;
+  width: 75%;/*longueur*/
+  text-transform: uppercase;
+
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-weight: 500;
+  font-size: 18px;
+  position: relative;
+
+}
+
+.burger {
+ 
+  display: none;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: #fafafa;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+/************************************************************** animation nav *********************************************************************/
+
+
+
+.nav-links a::after {/*ajoute apres /*inserer contenu suplementaire dans l'element selectionné ici rien*/
+  content: '';
+  position: absolute;
+  bottom: 0;/*fixe l'element en bas*/
+  margin-bottom: -10px;/*crée un decalage vers le haut de 10 px*/
+  right: 0;/*fixe l'element a droite*/
+  width: 0;/*largeur initial a 0*/
+  background: #ca0707;
+  transform: translateX(-50%) translateY(-5px);/*delacement sur l'axe x et l'axe y*/
+  height: 3px;
+  transition: 0.3s;/*transition de 3secondes*/
+}
+
+.nav-links a:hover::after {/*permet l-apparition d'un trait sous le lien*/
+  width: 45%;
+}
+
+
+
+
+
+
+
+/******************************************************************fin nav bar*************************************************************************/
+
+
+
+
+/***************************************************************** Animation burger **********************************************************************/
+
+@keyframes navLinkFade {
+  from {
+  
+    opacity: 0;
+    transform: translateX(50px);/*vers la droite de 50px au debut*/
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0px);/*replacement a la position initial*/
+  }
+}
+
+
+/*les 3 bares du menu hamburger*/
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+
+}
+
+.toggle .line2 {
+  opacity: 0;
+}
+
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+
+}
+
+/*****************************************************************responsive nab bar***************************************************************/
+
+
+@media (max-width:1024px) {
+ 
+  .nav-links {
+   
+    position: absolute;
+    right: 0px;
+    height: 50em;
+    top: 15.5%;
+    background: linear-gradient(90deg, #850c49 0%, rgba(91, 0, 63, 1) 34%, rgba(80, 0, 99, 1) 54%, rgba(52, 0, 124, 1) 65%, rgba(11, 0, 173, 1) 99%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    transform: translateX(100%);
+    padding-top: 3em;
+    z-index: 100;
+    
+  }
+  
+
+  .nav-links li {
+    opacity: 0;
+  }
+
+  .burger {
+    display: block;/*afficher sur une ligne en bloc en prenat tt la place dsponible*/
+  }
+  
+}
+
+.nav-active {
+   transform: translateX(0%);/*                */
+}
+
+
+
+/*************************************************************************carousel jqwery***************************************************************/
+
+
+
+.owl-carousel {
+  width: 95%;
+  height: calc(100vh - 154px);/*valeur egale a la hauteur de la vu moin 154px**/
+  margin: 3% auto;
+  border-radius: 25px;
+  overflow: hidden;/*contenu depassant sera caché*/
+
+
+}
+
+.slide {
+  width: 100%;
+  height: calc(100vh - 154px);
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+
+}
+
+
+.slide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+
+}
+
+.slide-1 {
+  background-image: url(img/caroussel1.1.1.jpg);
+
+}
+
+.slide-2 {
+  background-image: url(img/caroussel2.1.jpg);
+
+}
+
+.slide-3 {
+  background-image: url(img/caroussel\ .2.jpg);
+
+}
+
+
+.owl-dots {
+  width: 100%;
+  text-align: center;/*align le text*/
+  position: absolute;/*postion absolue par rapport a son parent*/
+  bottom: 1%;
+}
+
+.owl-dots span {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+.owl-dots button {
+  border: none !important;
+  outline: none !important;/**contour non*/
+}
+
+.owl-nav button {
+  border: none !important;
+  outline: none !important;
+}
+
+.owl-prev,
+.owl-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgb(229, 229, 236) !important;
+  font-size: 10em !important;
+  font-weight: bolder !important;
+  background: none !important;
+
+}
+
+.owl-prev {
+  left: 10px;
+}
+
+.owl-next {
+  right: 10px;
+}
+
+
+
+
+
+
+/*****************************************************************fin caroussel*************************************************************************/
+
+
+/*************************************************************** produit vedette *********************************************************************/
+
+.titre-vedette,
+.titre-promo {
+  background-color: var(--sectionBack);
+  margin: auto;
+  width: 90%;
+  padding: 2%;
+  text-align: center;
+  font-size: 3em;
+  margin-top: 5%;
+  text-transform: uppercase;
+  margin-bottom: 5%;
+  color: #ffffff;
+}
+
+.vedette {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  margin: auto;
+  background-color: var(--sectionBack);
+
+  margin-bottom: 5%;
+  border-radius: 20px;
+  box-shadow: 0 0 5px 5px #ebebef;
+  margin-top: 5%;
+  padding-bottom: 5%;
+
+}
+
+
+.vedette .Exclu {
+  width: 25%;
+  border-radius: 50%;
+  background: #f0f5f6;
+  box-shadow: 0 5px 20px rgb(255, 255, 255);
+  overflow: hidden;
+
+}
+
+.vedette .Exclu img {
+  width: 100%;
+  height: auto;
+
+}
+
+@media (max-width: 1080px) {
+  .vedette .Exclu {
+    width: 55%;
+    margin-bottom: 20px;
+  }
+
+}
+
+
+
+
+
+/******************************************************************produit promo**************************************************************/
+
+
+
+
+.promo {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  margin: auto;
+  background-color: var(--sectionBack);
+
+  margin-bottom: 5%;
+  border-radius: 20px;
+  box-shadow: 0 0 5px 5px #ebebef;
+  margin-top: 5%;
+  padding-bottom: 5%;
+}
+
+.promo .Exclu {
+  width: 25%;
+  border-radius: 10px;
+  background: #f0f5f6;
+  overflow: hidden;
+
+}
+
+.promo .Exclu img {
+  width: 100%;
+
+}
+
+
+@media (max-width: 1080px) {
+  .promo .Exclu {
+    width: 55%;
+    margin-bottom: 3%;
+  }
+}
+
+/**************************************************************  fin promo  **************************************************************************/
+
+
+
+/*****************************************************************footer******************************************************************************/
+
+.footer {
+
+  width: 100%;
+  background: #1e1e1f;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.social-icon,
+.menu {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+
+.social-icon__link {
+  font-size: 2rem;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+}
+
+.social-icon li:nth-child(1) a:hover {
+  transform: translateY(-10px);
+  color: #3b5998;
+}
+
+.social-icon li:nth-child(2) a:hover {
+  transform: translateY(-10px);
+  color: #1d9bf0;
+}
+
+.social-icon li:nth-child(3) a:hover {
+  transform: translateY(-10px);
+  color: #ff5b5b;
+}
+
+
+.social-icon li:nth-child(4) a:hover {
+  transform: translateY(-10px);
+  color: #f5a801;
+}
+
+.menu__link {
+  font-size: 1.2rem;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+  text-decoration: none;
+  opacity: 0.75;
+  font-weight: 300;
+}
+
+
+.menu__link:hover {
+  opacity: 1;
+  color: greenyellow;
+}
+
+.footer p {
+  color: #ffffff;
+  margin: 15px 0 10px 0;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+@media (max-width:700px) {
+
+  .menu__link {
+    font-size: 0.9rem;
+  }
+}
+
+/*****************************************************************fin footer***************************************************************************/
+
+
+
+
+
+
+
+/********************************************************************page nextgen**********************************************************************/
+
+#next {
+  background-image: url(img/Technologie\ Fond\ Affiche\ Texture.jpg);
+  /*fond next*/
+
+}
+
+.titre-next {
+  margin: 5% auto;
+  padding-bottom: 3em;
+  padding-top: 3em;
+  width: 50%;
+  text-align: center;
+  border: 2px solid #000001;
+  border-radius: 25%;
+  background-image: url(img/Free\ Vector\ _\ Futuristic\ horizon\ background.jpg);
+  background-position: center;
+
+}
+
+.titre-next h1 {
+  font-size: 3em;
+  text-transform: uppercase;
+  color: white;
+  font-weight: bold;
+
+}
+
+@media (max-width: 1080px) {
+  .titre-next h1 {
+    font-size: 1.5em;
+  }
+
+}
+
+/******************************************************************fin titre next*****************************************************************/
+
+
+
+
+/********************************************************************** produit*******************************************************************/
+
+
+
+.contenaire-produit {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding-bottom: 150px;
+}
+
+.produit1,
+.produit2,
+.produit3,
+.produit4,
+.produit5,
+.produit6,
+.produit7,
+.produit8 {
+  position: relative;
+  background-color: var(--sectionproduit);
+  width: 350px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, .3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 20px 20px 40px;
+  border-radius: 10px;
+  transition: .3s;
+
+
+}
+
+.produit1:hover,
+.produit2:hover,
+.produit3:hover,
+.produit4:hover,
+.produit5:hover,
+.produit6:hover,
+.produit7:hover,
+.produit8:hover {
+  transform: translateY(-15px);
+
+}
+
+
+
+
+.image img {
+  max-width: 100%;
+  height: 250px;
+}
+
+
+.NomPrix h3 {
+
+  font-size: 2em;
+  text-transform: capitalize;
+  color: var(--textColor);
+}
+
+.NomPrix span {
+  font-size: 1.5em;
+  color: var(--sectionprix);
+}
+
+.description {
+  height: 250px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.produit p {
+  font-size: 18px;
+  line-height: 25px;
+}
+
+
+.ajouter {
+
+
+  margin: auto;
+
+}
+
+.ajouter button {
+  padding: 10px 20px;
+  border-radius: 7px;
+  border: none;
+  background-color: rgb(17, 128, 30);
+  color: white;
+  font-size: 1.em;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.ajouter button:hover {
+  transform: scale(1.1);/*agrandir element de 10%****/
+}
+
+
+
+
+/*********************************************************************page retro************************************************/
+
+
+
+#retro {
+  background-image: url(img/Wallpaper\ -\ Wallpaper.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+
+}
+
+/***********************************************************************titre - retro******************************************/
+
+
+.titre-retro {
+  display: flex;
+  flex-direction: column;
+  background-image: url(img/pexels-cottonbro-studio-4835419.jpg);
+  border-radius: 25px;
+  width: 50%;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(252, 251, 251, 0.3);
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin: 5% auto;
+}
+
+.titre-retro p {
+  font-size: 1em;
+  color: rgb(255, 255, 255);
+  margin-bottom: auto;
+}
+
+
+
+
+
+
+
+.titre-retro h1 {
+  text-transform: uppercase;
+  margin-bottom: 50px;
+  font-family: 'Franklin Gothic Medium', sans-serif;
+  text-align: center;
+  font-size: 4em;
+  color: transparent;
+  -webkit-text-stroke: 1px white;/*ajouter bordure autour du texte*/
+  background: url('img/animationh1.png');
+  -webkit-background-clip: text;/*image de fond utilisier ici a l'interieur du texte**/
+  background-clip: text;
+  background-position: 0 0;
+  animation: animate 20s linear 2s infinite alternate;
+}
+
+/****************************************************************pour ameliorer l'animation*************************************************/
+
+@keyframes animate {
+  100% {
+    background-position: -500px 0;
+  }
+}
+
+/*****************************************************************responsive**********************************************************************/
+
+
+@media (max-width: 900px) {
+  .titre-retro p {
+    font-size: 0.7em;
+
+  }
+
+  .titre-retro h1 {
+    font-size: 3em;
+  }
+}
+
+/*********************************************************************************contenaire panier***************************************************/
+
+
+
+#contenaire-panier {
+  
+  width: 85%;
+ 
+  margin: 0 auto;
+
+}
+
+
+
+fieldset {
+  border: none;
+
+}
+
+
+
+/*************************************************************************** panier ******************************************************/
+
+
+.panier {
+  margin-bottom: 5%;
+  margin-top: 5%;
+  border-radius: 10px;
+  background-color: var(--sectionpanier);
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.panier-title {
+  padding: 2%;
+  text-align: center;
+}
+
+/********************************************************************* tableau **************************************************************/
+table {
+  
+  border-collapse: collapse;/***bordure fusionne pour forme une seule bordures entre elle*/
+
+  width: 90%;
+  
+  margin: 0 auto;
+
+}
+
+th {
+  /* font-style */
+  font-size: 1.25em;
+  color: rgb(22, 71, 128);
+  text-align: center;
+  
+  padding: 1em 0;
+}
+
+
+
+td {
+  /* display */
+  height: 2em;
+  width: 20%;
+  text-align: center;
+
+
+}
+
+.cancel {
+  color: red;
+  font-size: 0.85em;
+  text-decoration: underline;
+  padding-left: 0.25em;
+}
+
+.cancel-cell {
+  text-align: center;
+}
+
+.quantité {
+  width: 15%;
+
+}
+
+.quantité-cell {
+  text-align: end;
+
+}
+
+.total {
+  font-weight: bold;
+  padding: 0.5em 0;
+}
+
+.total-prix {
+  color: var(--textColor);
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+
+@media (max-width:900px) {
+  td {
+
+
+    font-size: 0.7em;
+
+  }
+
+  th {
+    font-size: 0.85em;
+  }
+}
+
+/*********************************************livraison******************************************/
+
+
+
+.livraison {
+  border: 1px solid rgb(218, 218, 229);
+  border-radius: 10px;
+  padding-bottom: 5%;
+  padding-top: 5%;
+  background-color: var(--sectionpanier);
+  margin-top: 5%;
+  margin-bottom: 5%;
+  height: 33%;
+}
+
+
+
+.livraison-title {
+
+  text-align: center;
+  padding-bottom: 5%;
+}
+
+.adresse-contenaire {
+  display: flex;
+  padding-left: 5%;
+}
+
+.lieu,
+.adresse-title,
+.option-contact {
+  padding-bottom: 5%;
+  font-weight: 600;
+  color: rgb(22, 71, 128);
+}
+
+.option-contact {
+  padding-top: 5%;
+}
+
+.option-livraison-btn,
+.sms,
+.retour,
+.garantie {
+  display: flex;
+  align-items: center;
+  height: 2em;
+
+}
+
+.option-adresse {
+  padding: 0 0 0 0.5em;
+
+}
+
+
+@media (max-width:900px) {
+
+  .option-livraison-btn,
+  .sms,
+  .retour,
+  .garantie {
+    font-size: 0.51em;
+  }
+
+
+  .adresse-title {
+    font-size: 0.65em;
+  }
+
+  .lieu {
+    font-size: 0.6em;
+  }
+
+  .option-contact {
+    font-size: 0.6em;
+  }
+
+}
+
+
+/******************************************************** adresse **********************************************************************************/
+
+
+.adresse-option,
+.adresse {
+  width: 50%;
+}
+
+.adresse-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.adresse-txt {
+  background-color: rgb(255, 255, 255);
+  border: none;
+  border-bottom: 1px solid grey;
+  height: 2em;
+  margin-right: 10%;
+}
+
+@media (max-width:900px) {
+  .adresse-txt {
+    font-size: 0.65em;
+  }
+
+
+
+}
+
+
+
+/************************************************************************paiement**********************************************************/
+
+.confirme-paiement {
+  width: 75%;
+  margin: auto;
+}
+
+.continue-paiement {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: var(--sectionpanier);
+  margin-top: 5%;
+  margin-bottom: 5%;
+  border-radius: 10px;
+
+
+}
+
+
+.continue {
+  border: none;
+  margin: 5% 3%;
+  padding: 2px;
+  border-radius: 7px;
+  border: none;
+  background-color: white;
+
+  font-size: 1em;
+  
+}
+
+
+
+.paiement {
+  margin: 5% 3%;
+  padding: 2px 5px;
+  border-radius: 7px;
+  border: none;
+  background-color: rgb(17, 128, 30);
+  color: white;
+  font-size: 1em;
+
+ cursor: pointer;
+
+}
+
+@media (max-width:900px) {
+
+  .paiement,
+  .continue {
+    font-size: 0.8em;
+
+  }}
